@@ -1,9 +1,11 @@
 import React from 'react';
+import HotJobs from './HotJobs';
 
 const Home = () => {
     return (
-        <div>
-            home
+        <div className='w-10/11 mx-auto'>
+            <HotJobs></HotJobs>
+           
         </div>
     );
 };
