@@ -7,7 +7,7 @@ const JobDetails = () => {
     return (
         <div>
             {job.title}
-            <Link to={`/jobApply/${job._id}`}><button className='btn'>Applyh Job</button></Link>
+            <Link to={`/jobApply/${job._id}`}><button className='btn'>Apply Job</button></Link>
         </div>
     );
 };
