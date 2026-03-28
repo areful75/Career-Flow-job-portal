@@ -1,8 +1,13 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../shared/SocialLogin';
+import { useLocation, useNavigate } from 'react-router';
 
 const SignIn = () => {
+  const location=useLocation();
+  const navigate=useNavigate();
+  const formm=location.state || '/';
+  console.log(location);
     const {signInUser}=use(AuthContext);
     const handleSignIn=e=>{
         e.preventDefault();
@@ -15,6 +20,7 @@ const SignIn = () => {
         signInUser(email,password)
         .then(result=>{
             //console.log(result.user);
+            navigate(formm);
         })
         .catch(error=>{
             console.log(error);
@@ -40,7 +46,7 @@ const SignIn = () => {
                 <button className="btn btn-neutral mt-4">SignIn</button>
               </fieldset>
               </form>
-              <SocialLogin></SocialLogin>
+              <SocialLogin formm={formm}></SocialLogin>
             </div>
             
           </div>
